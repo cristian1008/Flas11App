@@ -5,14 +5,48 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>hemeroteca</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+        <ion-title>hemeroteca</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label ion-text stacked>Ingrese un numero</ion-label>
+            <ion-input type="number" placeholder="Ej: 123" [(ngModel)]="numero1"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label ion-text stacked>Ingrese un numero</ion-label>
+            <ion-input type="number" placeholder="Ej: 123" [(ngModel)]="numero2"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>divisible</ion-label>
+            <ion-input ion-text [(ngModel)]="numero3"></ion-input>
+        </ion-item>
 
+        <ion-item>
+            {{resultado}}
+        </ion-item>
+        <ion-item>
+            <button ion-button (click)="Suma()">SUMA</button>
+            <button ion-button (click)="Resta()">RESTA</button>
+            <button ion-button (click)="Multi()">MULTI</button>
+            <button ion-button (click)="Divi()">DIVI</button>
+        </ion-item>
+        <ion-item>
+            <button ion-button (click)="tabla()" full>tabla</button>
+        </ion-item>
+
+        <ion-item *ngIf="Estado">
+            <button ion-button (click)="Cambio(true)" full>Divisible</button>
+            <button ion-button (click)="Cambio(false)" full>No Divisible</button>
+        </ion-item>
+
+
+        <ion-item *ngFor="let piso of edificio">
+            {{piso.num}} * {{piso.ind}} = {{piso.res}}
+    </ion-item>
+</ion-list>
 </ion-content>

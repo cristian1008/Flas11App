@@ -10,8 +10,13 @@ import { HomePage } from '../pages/home/home';
 import {HemerotecaPage} from '../pages/hemeroteca/hemeroteca';
 import {CienciasPage} from '../pages/ciencias/ciencias';
 import {HumanidadesPage} from '../pages/humanidades/humanidades';
-import {SistemasPage} from '../pages/sistemas/sistemas'
+import {SistemasPage} from '../pages/sistemas/sistemas';
+import {ListperPage} from '../pages/listper/listper';
 
+import {HttpClientModule} from '@angular/common/http';
+
+
+import { ConectarProvider } from '../providers/conectar/conectar';
 
 @NgModule({
   declarations: [
@@ -20,11 +25,13 @@ import {SistemasPage} from '../pages/sistemas/sistemas'
     HemerotecaPage,
     CienciasPage,
     HumanidadesPage,
-    SistemasPage
+    SistemasPage,
+    ListperPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,12 +40,14 @@ import {SistemasPage} from '../pages/sistemas/sistemas'
     HemerotecaPage,
     CienciasPage,
     HumanidadesPage,
-    SistemasPage
+    SistemasPage,
+    ListperPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ConectarProvider
   ]
 })
 export class AppModule {}
