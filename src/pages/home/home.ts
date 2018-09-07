@@ -5,6 +5,9 @@ import {CienciasPage} from '../ciencias/ciencias';
 import {HumanidadesPage} from '../humanidades/humanidades';
 import {SistemasPage} from '../sistemas/sistemas';
 import {ListperPage} from '../listper/listper';
+import {SifuncionaPage} from '../sifunciona/sifunciona';
+import {RegperPage} from '../regper/regper';
+import {BusperPage} from '../busper/busper';
 
 @Component({
   selector: 'page-home',
@@ -33,6 +36,18 @@ irsistemas(){
 
 IrListaPer(){
     this.navCtrl.push(ListperPage);
+}
+
+IrSiFunciona(){
+    this.navCtrl.push(SifuncionaPage);
+}
+
+RegPersona(){
+    this.navCtrl.push(RegperPage);
+}
+
+irBusPer(){
+    this.navCtrl.push(BusperPage);
 }
 
 }
